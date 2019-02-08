@@ -21,6 +21,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
 
 
 
@@ -33,7 +34,8 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
     ChatComponent,
     ListaUsuariosComponent,
     LoginComponent,
-    MensajesComponent
+    MensajesComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,
