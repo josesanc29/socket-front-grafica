@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // sockets
@@ -22,6 +23,7 @@ import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuari
 import { LoginComponent } from './pages/login/login.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 
 
@@ -35,11 +37,13 @@ import { GraficaComponent } from './components/grafica/grafica.component';
     ListaUsuariosComponent,
     LoginComponent,
     MensajesComponent,
-    GraficaComponent
+    GraficaComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     SocketIoModule.forRoot(config),
     ChartsModule,
     AppRoutingModule

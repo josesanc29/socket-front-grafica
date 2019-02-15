@@ -16,6 +16,10 @@ footer {
     border-radius: 5px;
     overflow-y: scroll;
 }
+#map {
+    height: 450px;
+    width: 100%;
+}
 
 .chat-input {
     margin-top: 10px;
