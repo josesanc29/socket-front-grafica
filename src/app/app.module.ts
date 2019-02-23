@@ -24,6 +24,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { EscritorioComponent } from './pages/escritorio/escritorio.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NuevoTicketComponent } from './pages/nuevo-ticket/nuevo-ticket.component';
+import { PublicoComponent } from './pages/publico/publico.component';
 
 
 
@@ -38,7 +43,12 @@ import { MapaComponent } from './components/mapa/mapa.component';
     LoginComponent,
     MensajesComponent,
     GraficaComponent,
-    MapaComponent
+    MapaComponent,
+    MenuComponent,
+    EscritorioComponent,
+    HomeComponent,
+    NuevoTicketComponent,
+    PublicoComponent
   ],
   imports: [
     BrowserModule,

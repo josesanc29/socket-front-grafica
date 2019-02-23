@@ -1,0 +1,23 @@
+<table>
+  <tr>
+      <td>
+          <span id="lblNuevoTicket"> Numero ticket nuevo:
+            <input #numeroTicket name="numero-ticket" type="number" class="form-control" placeholder="Numero ticket" autofocus required>
+          </span>
+      </td>
+  </tr>
+  <tr>
+      <td>
+        <span id="lblNuevoTicket"> Numero escritorio nuevo:
+          <input #numeroEscritorio name="numero-escritorio" type="number" class="form-control" placeholder="Numero de mesa" autofocus required>
+        </span>
+    </td>
+  </tr>
+  <tr>
+      <td>
+          <button (click)="crearTicket( numeroTicket.value , numeroEscritorio.value )" btn btn-secondary btn-lg>
+              Generar nuevo ticket
+          </button>
+      </td>
+  </tr>
+</table>
