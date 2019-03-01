@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-publico',
   templateUrl: './publico.component.html',
@@ -15,31 +16,35 @@ export class PublicoComponent implements OnInit {
 
     sub: Subscription;
     escritorioId: number;
-    ultimos4Tikets: Ticket[] = [];
+    listado: Ticket[] = [];
+    ultimoTicket: Ticket;
   
   constructor( private ws: WebsocketService,
                private ts: TicketsService,
                private http: HttpClient,
                private aroute: ActivatedRoute ) { 
-      
-        // this.http.get('http://localhost:5000/tickets/ultimos')
-        //          .subscribe((ultimos: any ) => {
-        //            console.log('ultimos tickets' , ultimos);
-        //            this.ultimos4Tikets = ultimos;
-        //          });
+
         this.sub = this.aroute.parent.params.subscribe( (dato: any) => {
             this.escritorioId = dato;
             console.log(' id escritorio pasado desde home ', this.escritorioId);
         });
+        this.ts.getAllTickets();
+        this.ts.getUltimoTicket();
     }
-
   ngOnInit() {
-
-    this.http.get('http://localhost:5000/tickets/ultimos')
-                 .subscribe((ultimos: any ) => {
-                   console.log('ultimos tickets' , ultimos);
-                   this.ultimos4Tikets = ultimos;
-                 });
+    this.obtenerListaTickets();
+    this.obtenerUltimoTicket();
   }
-
+  obtenerListaTickets() {
+    this.ts.getAllTickets()
+        .subscribe(( resp: any ) => {
+            this.listado = resp;
+        });
+  }
+  obtenerUltimoTicket(){
+    this.ts.getUltimoTicket()
+        .subscribe(( resp: any ) => {
+          this.ultimoTicket = resp;
+        })
+  }
 }

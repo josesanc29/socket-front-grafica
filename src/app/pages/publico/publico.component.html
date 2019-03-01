@@ -1,31 +1,17 @@
 <table>
   <tr>
       <td valign="middle" class="ticket-actual">
-          <span id="lblTicket1" class="ticket-actual-numero">Actual Ticket ....{{ultimos4Tikets[0].numero}}</span>
+          <span id="lblTicket1" class="ticket-actual-numero">Actual Ticket ....{{ultimoTicket.numero}}</span>
           <br>
-          <span id="lblEscritorio1" class="ticket-actual-escritorio">Caja Ocupada .....{{ultimos4Tikets[0].escritorio}}</span>
+          <span id="lblEscritorio1" class="ticket-actual-escritorio">Caja Ocupada .....{{ultimoTicket.escritorio}}</span>
       </td>
       <td>
           <table>
-              <tr>
+              <tr *ngFor="let item of listado">
                   <td>
-                      <span id="lblTicket2" class="ticket-secundario">Ticket Numero - {{ultimos4Tikets[1].numero}}</span>
+                      <span id="lblTicket2" class="ticket-secundario">Ticket Numero - {{item.numero}} </span>
                       <br>
-                      <span id="lblEscritorio2">Numero Caja - {{ultimos4Tikets[1].escritorio}}</span>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <span id="lblTicket3" class="ticket-secundario">Ticket Numero - {{ultimos4Tikets[2].numero}}</span>
-                      <br>
-                      <span id="lblEscritorio3">Numero Caja - {{ultimos4Tikets[2].escritorio}}</span>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <span id="lblTicket4" class="ticket-secundario">Ticket Numero - {{ultimos4Tikets[3].numero}}</span>
-                      <br>
-                      <span id="lblEscritorio4">Numero Caja - {{ultimos4Tikets[3].escritorio}}</span>
+                      <span id="lblEscritorio2">Numero Caja - {{item.escritorio}}</span>
                   </td>
               </tr>
           </table>

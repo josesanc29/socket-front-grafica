@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Ticket } from '../../classes/ticket';
+import { WebsocketService } from '../../services/websocket.service';
+import { TicketsService } from '../../services/tickets.service';
 
 @Component({
   selector: 'app-nuevo-ticket',
@@ -7,14 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevoTicketComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private ws: WebsocketService,
+              private ts: TicketsService) { 
+    }
 
   ngOnInit() {
+
   }
 
-  crearTicket( numero: number , escritorio: string) {
-      console.log('numero...' , numero);
-      console.log('escritorio...' , escritorio);
+  crearTicket( num: number , escr: string ) {
+    const nuevoTicket: Ticket = {
+        numero : num,
+        escritorio: escr
+    };
+    console.log(nuevoTicket);
+    this.ts.nuevoTicket(nuevoTicket.numero , nuevoTicket.escritorio);
   }
 
 }
